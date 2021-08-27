@@ -1,0 +1,14 @@
+# /lib/systemd/system/whenishackday.service
+[Unit]
+Description="whenishackday api server"
+
+[Service]
+Type=simple
+RestartSec=30
+Restart=always
+User=rytm
+Group=rytm
+ExecStart=/bin/sh -c 'java -jar /home/rytm/bin/whenishackday.jar'
+
+[Install]
+WantedBy=multi-user.target
